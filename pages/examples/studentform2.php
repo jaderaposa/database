@@ -83,11 +83,11 @@
                 <a class="navbar-brand" href="../../index.html">Online Guidance and Counseling System</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search 
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                     <!-- #END# Call Search -->
-                    <!-- Notifications -->
+                    <!-- Notifications 
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
@@ -196,7 +196,7 @@
                         </ul>
                     </li>
                     <!-- #END# Notifications -->
-                    <!-- Tasks -->
+                    <!-- Tasks 
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">flag</i>
@@ -273,9 +273,9 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- #END# Tasks -->
+                    <!-- #END# Tasks 
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
@@ -871,15 +871,15 @@
                                         <div class="form-line">
                                             <input type="text"  class="form-control" placeholder="" name="school" required>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     
                                     <label for="image">Image</label>
                                     <div class="form-group">
-                                        <input type="file"  class="form-control" name="image" id="image" required>
-                                    </div> -->
+                                        <input type="file"  class="form-control" name="image" id="image" accept="image/*" required>
+                                    </div> 
                                     <br>   
                                     <div>                      
-                                        <button style="margin"class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Create</button>
+                                        <button style="width: 10%;display: flex;margin: auto;justify-content: center;position: relative;padding: 10px;font-size: 1.5rem;"class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Create</button>
                                     </div>
                                     </form> 
                                 </div>

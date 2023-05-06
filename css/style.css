@@ -2540,7 +2540,7 @@ section.content {
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: rgb(0, 114, 245) !important; }
+  background-color: black; }
 
 .btn-default,
 .btn-default:hover,
@@ -2986,14 +2986,10 @@ section.content {
           color: #000; }
     .card .header h2 {
       margin: 0;
-      font-size: 20px;
+      font-size: 30px;
       font-weight: bold;
-      color: white;
-      background-color: black;
-      border: 2px solid black;
-      border-radius: 20px;
-      padding: 15px;
-      justify-content: space-between;}
+      color: black;
+      padding: 15px;}
       .card .header h2 small {
         display: block;
         font-size: 12px;

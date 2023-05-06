@@ -69,12 +69,12 @@
                 <a class="navbar-brand" href="../../index.html">Jade BootStrap Based - Materialization</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
+               <!--  <ul class="nav navbar-nav navbar-right">
+                    Call Search 
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
                             <span class="label-count">7</span>
@@ -183,7 +183,7 @@
                     </li>
                     <!-- #END# Notifications -->
                     <!-- Tasks -->
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">flag</i>
                             <span class="label-count">9</span>
@@ -258,10 +258,10 @@
                                 <a href="javascript:void(0);">View All Tasks</a>
                             </li>
                         </ul>
-                    </li>
-                    <!-- #END# Tasks -->
+                    </li> -->
+                    <!-- #END# Tasks 
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
@@ -644,7 +644,7 @@
         </aside>
         <!-- #END# Left Sidebar -->
         <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
+        <!-- <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
                 <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
@@ -784,7 +784,7 @@
                     </div>
                 </div>
             </div>
-        </aside>
+        </aside> -->
         <!-- #END# Right Sidebar -->
     </section>
 
@@ -797,26 +797,26 @@
                         <div class="profile-body">
                         <?php
                         include "connect2.php";
-                        if(isset($_GET['id']))
+                        if(isset($_GET['User_ID']))
                         {
-                            $student_id = mysqli_real_escape_string($conn, $_GET['id']);
-                            $query = "SELECT * FROM students WHERE id='$student_id' ";
+                            $user_id = mysqli_real_escape_string($conn, $_GET['User_ID']);
+                            $query = "SELECT * FROM users WHERE User_ID='$user_id'";
                             $query_run = mysqli_query($conn, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
-                                $student = mysqli_fetch_array($query_run);
+                                $user = mysqli_fetch_array($query_run);
                                 ?>
                             <div class="image-area">
-                                <img src="../../images/<?php echo $student['image'];?>" width="180" height="200" alt="profile" />
+                                <img src="../../images/<?php echo $user['User_Img'];?>" width="180" height="200" alt="profile" />
 
                                 <?php   
                                 }       
                                 ?>
                             </div>
                             <div class="content-area">
-                                <h3><b><?=$student['firstname'];?>&nbsp;<?=$student['middlename'];?>&nbsp;<?=$student['lastname'];?></b></h3>
-                                <p style="color:black;font-weight:normal;transform: translateY(-15px);">Student</p>
+                                <h3><b><?=$user['User_Name'];?></b></h3>
+                                <p style="color:black;font-weight:normal;transform: translateY(-15px);">User</p>
                             </div>
                         </div>
                         <div class="profile-footer">
@@ -850,38 +850,38 @@
                             <ul>
                                 <li>
                                     <div class="title">
-                                        <i class="material-icons">cake</i>
-                                        Birth Date
+                                        <i class="material-icons">transgender</i>
+                                        Pronoun
                                     </div>
                                     <div class="content">
-                                        <?=$student['birthdate'];?>
+                                        <?=$user['User_Pronoun'];?>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="title">
-                                        <i class="material-icons">transgender</i>
-                                        Gender
+                                        <i class="material-icons">call</i>
+                                        Phone Number
                                     </div>
                                     <div class="content">
-                                        <?=$student['sex'];?>
+                                        <?=$user['User_PhoneNo'];?>
                                     </div>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <div class="title">
                                         <i class="material-icons">library_books</i>
                                         School
                                     </div>
                                     <div class="content">
-                                        <?=$student['school'];?>
+                                        
                                     </div>
-                                </li>
+                                </li> -->
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">location_on</i>
-                                        Location
+                                        Address
                                     </div>
                                     <div class="content">
-                                        <?=$student['address'];?>
+                                        <?=$user['User_Address'];?>
                                     </div>
                                 </li>
                                 <li>
@@ -902,7 +902,7 @@
                                         Description
                                     </div>
                                     <div class="content">
-                                        I am the conqueror of worlds, the Alpha and the Omega. Thou shall bow before me.
+                                        I am a good user that can use this website in a good manner.
                                     </div>
                                 </li>
                                 <?php
@@ -933,12 +933,12 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo $student['image'];?>" width="" height="50"/>
+                                                            <img src="../../images/<?php echo $user['User_Img'];?>" width="" height="50"/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <a href="#"><?=$student['firstname'];?>&nbsp;<?=$student['middlename'];?>&nbsp;<?=$student['lastname'];?></a>
+                                                            <a href="#"><?=$user['User_Name'];?></a>
                                                         </h4>
                                                         Shared publicly - 12 Feb 2023
                                                     </div>
@@ -989,12 +989,12 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo $student['image'];?>" width="" height="50"/>
+                                                            <img src="../../images/<?php echo $user['User_Img'];?>" width="" height="50"/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <a href="#"><?=$student['firstname'];?>&nbsp;<?=$student['middlename'];?>&nbsp;<?=$student['lastname'];?></a>
+                                                            <a href="#"><?=$user['User_Name'];?></a>
                                                         </h4>
                                                         Shared publicly - 12 Feb 2023
                                                     </div>
@@ -1045,12 +1045,12 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo $student['image'];?>" height="50" />
+                                                            <img src="../../images/<?php echo $user['User_Img'];?>" height="50" />
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <a href="#"><?=$student['firstname'];?>&nbsp;<?=$student['middlename'];?>&nbsp;<?=$student['lastname'];?></a>
+                                                            <a href="#"><?=$user['User_Name'];?></a>
                                                         </h4>
                                                         Shared publicly - 12 Feb 2023
                                                     </div>
@@ -1104,7 +1104,7 @@
                                                 <label for="NameSurname" class="col-sm-2 control-label">Name Surname</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" id="NameSurname" name="NameSurname" placeholder="Name Surname" value="<?=$student['firstname'];?>&nbsp;<?=$student['middlename'];?>&nbsp;<?=$student['lastname'];?>" required>
+                                                        <input type="text" class="form-control" id="NameSurname" name="NameSurname" placeholder="Name Surname" value="<?=$user['User_Name'];?>" required>
                                                     </div>
                                                 </div>
                                             </div>

@@ -14,6 +14,10 @@
         z-index: 9999;
     }
 
+    th {
+        text-align: none;
+    }
+
 </style>
 
 <head>
@@ -659,12 +663,12 @@ th.sorting_asc {
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
-                                                <th>ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
+                                                <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
                                                 <th>Full Name&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
                                                 <th>Pronoun&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
                                                 <th>Phone No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
                                                 <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
-                                                <th style="justify-content: center;display: flex;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
+                                                <th style="display: flex;justify-content: center;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -684,9 +688,9 @@ th.sorting_asc {
                                                 <td><?php echo $row['User_PhoneNo']; ?></td>
                                                 <td><?php echo $row['User_Address']; ?></td>
                                                 <td class="jaded" style="text-align: center;">
-                                                    <a class='btn btn-primary' href='viewdisplay.php?id=<?php echo $row['User_ID']; ?>'><i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='edit.php?id=<?php echo $row['User_ID']; ?>'><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['User_ID']; ?>" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='viewdisplay.php?User_ID=<?php echo $row['User_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
+                                                    <a class='btn btn-success' href='edit.php?User_ID=<?php echo $row['User_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['User_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 </td>
                                             <?php include "modal.php"; ?>    
                                             </tr>
