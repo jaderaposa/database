@@ -6,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Student  | Jade BootStrap Based - Materialization</title>
+    <title>Add User | OGCS</title>
     <!-- Favicon-->
-    <link rel="icon" href="../../xbox.png" type="image/x-icon">
+    <link rel="icon" href="../..    /xbox.png" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -876,11 +876,13 @@
                                     <div class="form-group">
                                         <input type="file"  class="form-control" name="image" id="image" required>
                                     </div>
-                                    <br>                         
-                                    <button style="margin"class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Create</button>
-                                    </form>
+                                    <br>   
+                                    <div>                      
+                                        <button style="margin"class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Create</button>
+                                    </div>
+                                    </form> 
                                 </div>
-                            </div>                                                                                                                                                                          
+                            </div>                                                                                                
                         </div>                        
                     </div>
                 </div>

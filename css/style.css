@@ -7779,12 +7779,12 @@ fieldset[disabled] .form-control {
 /* Login Page ================================== */
 .login-page {
   background-image: url(../images/bg.png);
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-size: contain;
   background-size: 104%;
   padding-left: 0;
   max-width: 360px;
-  margin: 5% auto;
+  margin: 10% auto;
   overflow-x: hidden; }
   .login-page .login-box .msg {
     color: black;

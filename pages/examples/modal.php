@@ -1,6 +1,6 @@
 <!-- Modal -->
 
-<div class="modal fade" id="deleteModal<?php echo $row['id']?>" tabindex="-1" role="dialog">
+<div class="modal fade" id="deleteModal<?php echo $row['User_ID']?>" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -19,7 +19,7 @@
 				</h1>                                                           
 			</div>
 			<div class="modal-footer">
-				<a href='delete.php?id=<?php echo $id; ?>'>
+				<a href='delete.php?User_ID=<?php echo $id; ?>'>
 					<button type="button" class="btn btn-secondary">Yes</button>
 				</a>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"> No </button>

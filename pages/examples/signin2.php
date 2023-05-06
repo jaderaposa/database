@@ -38,7 +38,7 @@
 
 <style>
 
-.card.animate__animated.animate__fadeIn.animate__delay-1s {
+.card {
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid #333;
     backdrop-filter: blur(5px);
@@ -57,14 +57,14 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a class="font-effect-3d animate__animated animate__heartBeat animate__infinite animate__slower" href="javascript:void(0);">Jaded<b>BootStrapMaster</b></a>
+            <a class="font-effect-3d" href="javascript:void(0);"><b>Online Guidance and Counseling System</b></a>
             <!-- <small>Jade BootStrap Based Game</small> -->
         </div>  
-        <div class="card animate__animated animate__fadeIn animate__delay-1s"> 
+        <div class="card"> 
             <div class="body">
             <!-- <div id="blur"></div> -->
                 <form method="POST" action="login.php" name="users">
-                    <div class="msg" style="font-size: 15px;text-align: center;">Sign In to Initiate Bootstrap Sequence</div>
+                    <div class="msg" style="font-size: 15px;text-align: center;">Log In</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">email</i>

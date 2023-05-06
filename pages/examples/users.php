@@ -1,44 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
 
-<?php
-    session_start();
-    if (isset($_SESSION["email"])) {
-    
-    
-      
-      echo '<div id="dialogBox" class="dialog-box">
-              <p>You have successfully logged in.</p>
-            </div>
-    
-            <script>
-              
-              setTimeout(function() {
-                document.getElementById("dialogBox").remove();
-              }, 3500);
-            </script>';
-    
-      
-      
-      unset($_SESSION['email']);
-    }
-
-    // if (isset($_GET["submit_form_get"])) {
-
-    //     echo '<div id="dialogBox"> 
-    //         <p>Successfully Updated Student Info!</p>
-    //         </div> 
-            
-    //         <script>
-    //         setTimeout(function() {
-    //             document.getElementById("dialogBox").remove();
-    //           }, 3500);
-              
-    //           </script>
-    //         ';
-    // }
-?>
-
 <style>
 
     #dialogBox {
@@ -53,10 +15,6 @@
     }
 
 </style>
-
-
-
-
 
 <head>
     <meta charset="UTF-8">
@@ -144,197 +102,9 @@ th.sorting_asc {
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand jaded" href="../../index.html">Online Guidance and Counseling System</a>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                    <!-- #END# Call Search -->
-                    <!-- Notifications -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <i class="material-icons">notifications</i>
-                            <span class="label-count">7</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">NOTIFICATIONS</li>
-                            <li class="body">
-                                <ul class="menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">person_add</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>12 new members joined</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 14 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-cyan">
-                                                <i class="material-icons">add_shopping_cart</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>4 sales made</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-red">
-                                                <i class="material-icons">delete_forever</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Nancy Doe</b> deleted account</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-orange">
-                                                <i class="material-icons">mode_edit</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Nancy</b> changed name</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-blue-grey">
-                                                <i class="material-icons">comment</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> commented your post</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">cached</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> updated status</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-purple">
-                                                <i class="material-icons">settings</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Settings updated</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Notifications</a>
-                            </li>
-                        </ul>
-                    </li>
+            
                     <!-- #END# Notifications -->
                     <!-- Tasks -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <i class="material-icons">flag</i>
-                            <span class="label-count">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">TASKS</li>
-                            <li class="body">
-                                <ul class="menu tasks">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Footer display issue
-                                                <small>32%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Make new buttons
-                                                <small>45%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Create new dashboard
-                                                <small>54%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Solve transition issue
-                                                <small>65%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Answer GitHub questions
-                                                <small>92%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
                     <!-- #END# Tasks -->
                     <!-- <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li> -->
                 </ul>
@@ -539,8 +309,8 @@ th.sorting_asc {
                         </ul>
                     </li> -->
                     <li class="active">
-                        <a href="students2.php" class="menu-toggle">
-                            <span>Patient List</span>
+                        <a href="users.php" class="menu-toggle">
+                            <span>Users</span>
                         </a> <!--
                         <ul class="ml-menu">
                             <li>
@@ -876,7 +646,7 @@ th.sorting_asc {
                     <div class="card">
                         <div class="header" style="display: flex; justify-content:space-between;padding: 15px;">
                             <h2>
-                                PATIENT LIST
+                                USER LIST
                             </h2>
                             <!-- <ul class="header-dropdown m-r--5"> -->
                             <section>
@@ -894,32 +664,29 @@ th.sorting_asc {
                                                 <th>Pronoun&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
                                                 <th>Phone No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
                                                 <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
-                                                <th>Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse"></i>&nbsp;&nbsp;</th>                                         
+                                                <th style="justify-content: center;display: flex;width: auto;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
                                     
                                         include "connect2.php";                           
-                                        $query = "SELECT * FROM students";                                   
+                                        $query = "SELECT * FROM users";                                   
                                         $result = $conn -> query($query);                                    
                                         while($row = $result -> fetch_assoc()){
-                                        $id = $row['id'];
+                                        $id = $row['User_ID'];
                                         
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['id']; ?></td>
-                                                <td><?php echo $row['firstname']; ?></td>
-                                                <td><?php echo $row['middlename']; ?></td>
-                                                <td><?php echo $row['lastname']; ?></td>
-                                                <td><?php echo $row['birthdate']; ?></td>
-                                                <td><?php echo $row['sex']; ?></td>
-                                                <td><?php echo $row['school']; ?></td>
-                                                <td><?php echo $row['address']; ?></td>
+                                                <td><?php echo $row['User_ID']; ?></td>
+                                                <td><?php echo $row['User_Name']; ?></td>
+                                                <td><?php echo $row['User_Pronoun']; ?></td>
+                                                <td><?php echo $row['User_PhoneNo']; ?></td>
+                                                <td><?php echo $row['User_Address']; ?></td>
                                                 <td class="jaded" style="text-align: center;">
-                                                    <a class='btn btn-primary' href='viewdisplay.php?id=<?php echo $row['id']; ?>'><i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='edit.php?id=<?php echo $row['id']; ?>'><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['id']; ?>" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <a class='btn btn-primary' href='viewdisplay.php?id=<?php echo $row['User_ID']; ?>'><i class="fa fa-search"  aria-hidden="true"></i></a>
+                                                    <a class='btn btn-success' href='edit.php?id=<?php echo $row['User_ID']; ?>'><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['User_ID']; ?>" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 </td>
                                             <?php include "modal.php"; ?>    
                                             </tr>
@@ -935,67 +702,8 @@ th.sorting_asc {
                 </div>
             </div>
             <!-- #END# Basic Examples --> 
-            <!-- Exportable Table -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2 style="display: inline-block;margin: 15px;">
-                                EXPORTABLES
-                            </h2>                   
-                        </div>
-                        <div class="body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
-                                        <thead>
-                                            <tr>
-                                                <th>ID #</th>
-                                                <th>First Name</th>
-                                                <th>Middle Name</th>
-                                                <th>Last Name</th>
-                                                <th>Birth Date</th>
-                                                <th>Sex</th>
-                                                <th>School</th>
-                                                <th>Address</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                    
-                                        include "connect2.php";                           
-                                        $query = "SELECT * FROM students";                                   
-                                        $result = $conn -> query($query);                                    
-                                        while($row = $result -> fetch_assoc()){
-                                        $id = $row['id'];
-                                        
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $row['id']; ?></td>
-                                                <td><?php echo $row['firstname']; ?></td>
-                                                <td><?php echo $row['middlename']; ?></td>
-                                                <td><?php echo $row['lastname']; ?></td>
-                                                <td><?php echo $row['birthdate']; ?></td>
-                                                <td><?php echo $row['sex']; ?></td>
-                                                <td><?php echo $row['school']; ?></td>
-                                                <td><?php echo $row['address']; ?></td> 
-                                            <?php include "modal.php"; ?>    
-                                            </tr>
-                                        <?php                                      
-                                        }                                                                 
-                                        ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- #END# Exportable Table -->
 
-        </div>
     </section>
 
     <!-- Jquery Core Js -->
