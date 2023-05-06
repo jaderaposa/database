@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 05:51 AM
+-- Generation Time: May 06, 2023 at 06:24 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -123,7 +123,7 @@ CREATE TABLE `users` (
   `User_Name` varchar(255) DEFAULT NULL,
   `User_Pronoun` varchar(5) DEFAULT NULL,
   `User_Address` varchar(255) DEFAULT NULL,
-  `User_PhoneNo` bigint(11) DEFAULT NULL,
+  `User_PhoneNo` bigint(12) DEFAULT NULL,
   `User_Img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -132,9 +132,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`User_ID`, `User_Name`, `User_Pronoun`, `User_Address`, `User_PhoneNo`, `User_Img`) VALUES
-(1, 'Jade Raposa', 'Him', 'Sto. Domingo, Albay', 9663969556, ''),
-(2, 'Glaiza Millete', 'Her', 'San Joaquin, Rawis', 9663969556, ''),
-(3, 'Luka Doncic', 'It', 'Dallas, Texas', 9663969556, '');
+(1, 'Jade', 'Him', 'SDA', 9663969556, ''),
+(2, 'Glaiza', 'Her', 'Rawis, San Joaquin', 9526484894, ''),
+(3, 'Stephen', 'It', 'San Francisco, California', 9526484814, ''),
+(4, 'Len', 'Him', 'SDA', 9663969538, ''),
+(5, 'Andrea', 'Her', 'Rawis, San Joaquin', 9667539538, ''),
+(6, 'Klay', 'Him', 'San Francisco, California', 9667247538, ''),
+(7, 'Yami Magai', 'Him', 'SDA', 9471918324, ''),
+(8, 'Mela', 'asdsa', 'SDA', 123213213, 'tulipsatinash.jfif');
 
 --
 -- Indexes for dumped tables
@@ -236,7 +241,7 @@ ALTER TABLE `staffs`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `User_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
