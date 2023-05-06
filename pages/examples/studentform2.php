@@ -80,7 +80,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">Jade BootStrap Based - Materialization</a>
+                <a class="navbar-brand" href="../../index.html">Online Guidance and Counseling System</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -477,8 +477,8 @@
                         </ul>
                     </li> -->
                     <li class="active">
-                        <a href="students2.php" class="menu-toggle">
-                            <span>Student Data Table</span>
+                        <a href="users.php" class="menu-toggle">
+                            <span>Users</span>
                         </a> <!--
                         <ul class="ml-menu">
                             <li>
@@ -816,11 +816,11 @@
                     <div class="col-lg-14 col-md-12 col-sm-10">          
                             <div class="body">
                                 <h2 class="card-inside-title">
-                                    CREATE STUDENT PROFILE
+                                    CREATE USER PROFILE
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                 <li>
-                                <button onClick="window.location.href='students2.php';" type="button" class="btn btn-info" href="students2.php">Back</button>
+                                <button onClick="window.location.href='users.php';" type="button" class="btn btn-info" href="users.php">Back</button>
                                 </li>
                             </ul>
                                 <br>
