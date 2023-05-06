@@ -811,7 +811,7 @@
                     <div class="card">
                         <div class="header">
                         
-            <form method="POST" action="upload.php" enctype="multipart/form-data">
+            <form method="POST" action="add.php" enctype="multipart/form-data">
                 <div class="row clearfix">
                     <div class="col-lg-14 col-md-12 col-sm-10">          
                             <div class="body">
@@ -827,25 +827,31 @@
                                 <br>                          
                                 
                                 <div class="margintop20px">
-                                    <label for="firstname">First Name</label>
+                                    <label for="fullname">Full Name</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="firstname" required>
+                                            <input type="text" class="form-control" placeholder="" name="fullname" required>
                                         </div>
                                     </div>
-                                    <label for="midname">Middle Name</label>
+                                    <label for="pronoun">Pronoun</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  class="form-control" placeholder="" name="middlename">
+                                            <input type="text"  class="form-control" placeholder="" name="pronoun">
                                         </div>
                                     </div>
-                                    <label for="lastname">Last Name</label>
+                                    <label for="phoneno">Phone Number</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="lastname" required>
+                                            <input type="number" class="form-control" placeholder="" name="phoneno" required>
                                         </div>
                                     </div>
-                                    <label for="birthdate">Birth Date</label>
+                                    <label for="address">Address</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text"  class="form-control" placeholder="" name="address" required>
+                                        </div>
+                                    </div>
+                                    <!-- <label for="birthdate">Birth Date</label>
                                     <div class="form-group">
                                         <div class="form-line" id="bs_datepicker_container">
                                             <input type="text" id="birthdate" name="birthdate" class="form-control" placeholder="MM/DD/YYYY" required>
@@ -866,16 +872,11 @@
                                             <input type="text"  class="form-control" placeholder="" name="school" required>
                                         </div>
                                     </div>
-                                    <label for="address">Address</label>
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text"  class="form-control" placeholder="" name="address" required>
-                                        </div>
-                                    </div>
+                                    
                                     <label for="image">Image</label>
                                     <div class="form-group">
                                         <input type="file"  class="form-control" name="image" id="image" required>
-                                    </div>
+                                    </div> -->
                                     <br>   
                                     <div>                      
                                         <button style="margin"class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Create</button>
