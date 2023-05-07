@@ -104,33 +104,30 @@ $fname = $_GET['fname'];
     <?php
     include "connect2.php";
 
-            $id =$_POST['id'];
+            $user_id =$_POST['id'];
             if (isset($_POST['submit_form_get'])) {
                                  
-                $firstname = $_POST['firstname'];
-                $middlename = $_POST['middlename'];
-                $lastname = $_POST['lastname'];
-                $birthdate = $_POST['birthdate'];
-                $sex = $_POST['sex'];
-                $school = $_POST['school'];
+                $fullname = $_POST['fullname'];
+                $pronoun = $_POST['pronoun'];
                 $address = $_POST['address'];
+                $phoneno = $_POST['phoneno'];
 
                 $filename = htmlspecialchars (basename($_FILES["image"]["name"]));
 
-                $student_query = "SELECT * FROM students WHERE id='$id'";
-                $student_query_run = mysqli_query($conn, $student_query);
-                foreach($student_query_run as $stud_row)
+                $user_query = "SELECT * FROM users WHERE User_ID='$user_id'";
+                $user_query_run = mysqli_query($conn, $user_query);
+                foreach($user_query_run as $user_row)
                 {
                     // echo $stud_row['image'];
                     if($filename == NULL)
                     {
                         // UPDATE WITH EXISTING IMAGE
-                        $image_data = $stud_row['image'];
+                        $image_data = $user_row['User_Img'];
                     }
                     else 
                     {
                         // UPDATE WITH NEW IMAGE AND DELETE WITH OLD IMAGE
-                        if($img_path = "../../images/".$stud_row['image'])
+                        if($img_path = "../../images/".$user_row['User_Img'])
                         {
                             unlink($img_path);
                             $image_data = $filename;
@@ -140,9 +137,9 @@ $fname = $_GET['fname'];
                 }
                 
 
-            mysqli_query($conn," UPDATE students SET firstname='$firstname', middlename='$middlename', lastname='$lastname', birthdate='$birthdate', sex='$sex', school='$school', address='$address', image='$image_data' WHERE id = '$id' ");
+            mysqli_query($conn," UPDATE users SET User_Name='$fullname', User_Pronoun='$pronoun', User_Address='$address', User_PhoneNo='$phoneno', User_Img='$image_data' WHERE User_ID = '$user_id' ");
             
-            $result=mysqli_query($conn,"SELECT * FROM students");
+            $result=mysqli_query($conn,"SELECT * FROM users");
             $row=mysqli_num_rows($result);
 
             if($result)
@@ -150,22 +147,22 @@ $fname = $_GET['fname'];
                 if($filename == NULL)
                 {
                     // UPDATE WITH EXISTING IMAGE
-                    echo "<script>window.alert('Student Record Successfully Added!'); </script>";
-                    echo "<script>window.location.assign('students2.php');</script>";
+                    echo "<script>window.alert('User Successfully Updated!'); </script>";
+                    echo "<script>window.location.assign('users.php');</script>";
                 }
                 else 
                 {
                     // UPDATE WITH NEW IMAGE AND DELETE WITH OLD IMAGE
                     move_uploaded_file($_FILES["image"]["tmp_name"],"../../images/" . $_FILES["image"]["name"]);
-                    echo "<script>window.alert('Student Record Successfully Added!'); </script>";
-                    echo "<script>window.location.assign('students2.php');</script>";
+                    echo "<script>window.alert('User Successfully Updated!'); </script>";
+                    echo "<script>window.location.assign('users.php');</script>";
                 } 
                 // echo "<script>alert('Student Record Successfully Updated!'); window.location.assign('students2.php'); </script>";
             }
             else 
             {
-            $_SESSION['status'] = "Student Record Failed to Update";
-            header('Location: students.php');
+            $_SESSION['status'] = "User Failed to Update";
+            header('Location: users.php');
             }
 
 

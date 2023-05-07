@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Profile | Jade BootStrap Based - Materialization</title>
+    <title> View Profile | OGCS</title>
     <!-- Favicon-->
     <link rel="icon" href="../../xbox.png" type="image/x-icon">
 
@@ -66,7 +66,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">Jade BootStrap Based - Materialization</a>
+                <a class="navbar-brand" href="../../index.html">Online Guidance and Counseling System</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                <!--  <ul class="nav navbar-nav navbar-right">
@@ -801,14 +801,15 @@
                         {
                             $user_id = mysqli_real_escape_string($conn, $_GET['User_ID']);
                             $query = "SELECT * FROM users WHERE User_ID='$user_id'";
+
                             $query_run = mysqli_query($conn, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
                                 $user = mysqli_fetch_array($query_run);
-                                ?>
+                        ?>
                             <div class="image-area">
-                                <img src="../../images/<?php echo $user['User_Img'];?>" width="180" height="200" alt="profile" />
+                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="200" height="200" alt="profile" />
 
                                 <?php   
                                 }       
@@ -933,7 +934,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo $user['User_Img'];?>" width="" height="50"/>
+                                                        <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="" height=""/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -989,7 +990,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo $user['User_Img'];?>" width="" height="50"/>
+                                                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="" height=""/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -1045,7 +1046,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo $user['User_Img'];?>" height="50" />
+                                                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="" height=""/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">

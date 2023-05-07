@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Add User | OGCS</title>
+    <title> Add User | OGCS</title>
     <!-- Favicon-->
     <link rel="icon" href="../..    /xbox.png" type="image/x-icon">
 
@@ -657,7 +657,7 @@
             #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
+        <!-- Right Sidebar 
         <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>

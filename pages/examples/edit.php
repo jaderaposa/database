@@ -97,7 +97,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Student Form | Jade BootStrap Based - Materialization</title>
+    <title> Update Profile | OGCS</title>
     <!-- Favicon-->
     <link rel="icon" href="../../xbox.png" type="image/x-icon">
 
@@ -171,14 +171,14 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">Jade BootStrap Based - Materialization</a>
+                <a class="navbar-brand" href="../../index.html">Online Guidance and Counseling System</a>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
+            <!-- <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
+                    <!-- Call Search 
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                     <!-- #END# Call Search -->
-                    <!-- Notifications -->
+                    <!-- Notifications 
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
@@ -287,7 +287,7 @@
                         </ul>
                     </li>
                     <!-- #END# Notifications -->
-                    <!-- Tasks -->
+                    <!-- Tasks 
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">flag</i>
@@ -364,10 +364,10 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- #END# Tasks -->
+                    <!-- #END# Tasks 
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- #Top Bar -->
@@ -749,7 +749,7 @@
         </aside>
         <!-- #END# Left Sidebar -->
         <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
+        <!-- <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
                 <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
@@ -902,12 +902,12 @@
                     <div class="card">
                         <div class="header">
                         <?php
-                        $id = $_GET['id'];
-                        $query = "SELECT * FROM students WHERE id = '$id'";
+                        $user_id = $_GET['User_ID'];
+                        $query = "SELECT * FROM users WHERE User_ID = '$user_id'";
 
                         $result = $conn -> query($query);
                         while($row = $result -> fetch_assoc()){
-                            $id = $row['id'];
+                            $user_id = $row['User_ID'];
                         ?>
                         
             <form method="POST" action="update.php" enctype="multipart/form-data">
@@ -915,44 +915,50 @@
                     <div class="col-lg-14 col-md-12 col-sm-10">          
                             <div class="body">
                                 <h2 class="card-inside-title">
-                                    EDIT STUDENT PROFILE
+                                    EDIT USER PROFILE
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li>
-                                        <button onClick="window.location.href='students2.php';" type="button" class="btn btn-info" href="students2.php">Back</button>
+                                        <button onClick="window.location.href='students2.php';" type="button" class="btn btn-info" href="users.php">Back</button>
                                     </li>
                                 </ul>
                                 <br>
                                 <br>           
                                 
                                 <div>
-                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" class="form-control"> <br>
+                                    <input type="hidden" name="id" value="<?php echo $row['User_ID']; ?>" class="form-control"> <br>
 
-                                    <label for="firstname">First Name</label>
+                                    <label for="fullname">Full Name</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['firstname']; ?>" placeholder="" name="firstname" required>
+                                            <input type="text" class="form-control" value="<?php echo $row['User_Name']; ?>" placeholder="" name="fullname" required>
                                         </div>
                                     </div>
-                                    <label for="middlename">Middle Name</label>
+                                    <label for="pronoun">Pronoun</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  class="form-control" value="<?php echo $row['middlename']; ?>" placeholder="" name="middlename">
+                                            <input type="text"  class="form-control" value="<?php echo $row['User_Pronoun']; ?>" placeholder="" name="pronoun">
                                         </div>
                                     </div>
-                                    <label for="lastname">Last Name</label>
+                                    <label for="phoneno">Phone Number</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['lastname']; ?>" placeholder="" name="lastname" required>
+                                            <input type="text" class="form-control" value="<?php echo $row['User_PhoneNo']; ?>" placeholder="" name="phoneno" required>
                                         </div>
                                     </div>
-                                    <label for="birthdate">Birth Date</label>
+                                    <label for="address">Address</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text"  class="form-control" value="<?php echo $row['User_Address']; ?>" placeholder="" name="address" required>
+                                        </div>
+                                    </div>
+                                    <!-- <label for="birthdate">Birth Date</label>
                                     <div class="form-group">
                                         <div class="form-line" id="bs_datepicker_container">
                                             <input type="text" id="birthdate" name="birthdate" value="<?php echo $row['birthdate']; ?>" class="form-control" placeholder="MM/DD/YYYY"/ required>
                                         </div>
-                                    </div>
-                                    <label for="sex">Sex</label>
+                                    </div> -->
+                                    <!-- <label for="sex">Sex</label>
                                     <div class="form-group">
                                         <div>
                                             <input name="sex" type="radio" id="radio_1" value="Male" 
@@ -974,24 +980,18 @@
                                             >
                                             <label for="radio_2">Female</label>
                                         </div>
-                                    </div>
-                                    <label for="school">School</label>
+                                    </div> -->
+                                    <!-- <label for="school">School</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text"  class="form-control" value="<?php echo $row['school']; ?>" placeholder="" name="school">
                                         </div>
-                                    </div>
-                                    <label for="address">Address</label>
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text"  class="form-control" value="<?php echo $row['address']; ?>" placeholder="" name="address" required>
-                                        </div>
-                                    </div>
+                                    </div> -->
+                                    
                                     <label for="image">Image</label>
                                     <div class="form-group" style="display: flex;justify-content: space-between;width: 30%;position: relative;align-items: flex-end;">
-                                        <img src="../../images/<?php echo $row['image'];?>" style="border: 2px solid black;width: 250px;height: 180px;">
                                         &nbsp;&nbsp;&nbsp;
-                                        <input type="file" class="form-control" name="image" id="image" min="1" value="<?php echo $row['image']; ?>">
+                                        <input type="file" class="form-control" name="image" id="image" min="1" value="<?php echo $row['User_Img']; ?>" accept="image/*">
 
                                     </div>
                                     <br>
