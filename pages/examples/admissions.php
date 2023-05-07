@@ -23,7 +23,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> User List | OGCS </title>
+    <title> Admissions | OGCS </title>
     <!-- Favicon-->
     <link rel="icon" href="" type="image/x-icon">
 
@@ -150,7 +150,7 @@ th.sorting_asc {
                         <a href="">
                             <span>Home</span>
                         </a>
-                    </li> 
+                    </li>
                     <li>
                         <a href="users.php" class="menu-toggle">
                             <span>Users</span>
@@ -160,9 +160,8 @@ th.sorting_asc {
                         <a href="admissions.php" class="menu-toggle">
                             <span>Admissions</span>
                         </a> 
-                    </li>
-                    <!--
-                    <li>
+                    </li> 
+                    <!--<li>
                         <a href="../../pages/typography.html">
                             <i class="material-icons">text_fields</i>
                             <span>Typography</span>
@@ -659,9 +658,10 @@ th.sorting_asc {
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
                     <div class="card">
+                        
                         <div class="header" style="display: flex; justify-content:space-between;padding: 15px;">
                             <h2>
-                                USER LIST
+                                Admissions
                             </h2>
                             <!-- <ul class="header-dropdown m-r--5"> -->
                             <section>
@@ -675,10 +675,10 @@ th.sorting_asc {
                                         <thead>
                                             <tr>
                                                 <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
-                                                <th>Full Name&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
-                                                <th>Pronoun&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
-                                                <th>Phone No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
-                                                <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
+                                                <th>Patient No.&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
+                                                <th>Staff No.&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
+                                                <th>Preferred Method (Anonymous or Introduce )&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
+                                                <th>Date of Admission&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
                                                 <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
                                             </tr>
                                         </thead>
@@ -686,24 +686,24 @@ th.sorting_asc {
                                         <?php
                                     
                                         include "connect2.php";                           
-                                        $query = "SELECT * FROM users";                                   
+                                        $query = "SELECT * FROM admissions";                                   
                                         $result = $conn -> query($query);                                    
                                         while($row = $result -> fetch_assoc()){
-                                        $id = $row['User_ID'];
+                                        $id = $row['Admission_ID'];
                                         
                                         ?>
                                             <tr>
+                                                <td><?php echo $row['Admission_ID']; ?></td>
                                                 <td><?php echo $row['User_ID']; ?></td>
-                                                <td><?php echo $row['User_Name']; ?></td>
-                                                <td><?php echo $row['User_Pronoun']; ?></td>
-                                                <td><?php echo $row['User_PhoneNo']; ?></td>
-                                                <td><?php echo $row['User_Address']; ?></td>
+                                                <td><?php echo $row['Staff_ID']; ?></td>
+                                                <td style="width: 27%;"><?php echo $row['Preferred_Method']; ?></td>
+                                                <td><?php echo $row['Date_Admissioned']; ?></td>
                                                 <td class="jaded" style="text-align: center;">
-                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='userdisplay.php?User_ID=<?php echo $row['User_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='useredit.php?User_ID=<?php echo $row['User_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['User_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='admissiondisplay.php?Admission_ID=<?php echo $row['Admission_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
+                                                    <a class='btn btn-success' href='useredit.php?User_ID=<?php echo $row['Admission_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['Admission_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 </td>
-                                            <?php include "userdeletemodal.php"; ?>    
+                                            <?php include "admissiondeletemodal.php"; ?>    
                                             </tr>
                                         <?php                                      
                                         }                                                                 
@@ -713,6 +713,7 @@ th.sorting_asc {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -720,6 +721,16 @@ th.sorting_asc {
             </div>
 
     </section>
+
+    <style>
+
+        .module-border-wrap {
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(to bottom right, black, white);
+        padding: 5px;
+    }
+    </style>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

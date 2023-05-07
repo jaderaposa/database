@@ -1,10 +1,10 @@
 <!-- Modal -->
 
-<div class="modal fade" id="deleteModal<?php echo $row['User_ID']?>" tabindex="-1" role="dialog">
+<div class="modal fade" id="deleteModal<?php echo $row['Admission_ID']?>" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel"> Delete Student Data </h5>
+				<h5 class="modal-title" id="exampleModalLabel"> Delete Admission Data </h5>
 				<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button> -->
@@ -15,11 +15,11 @@
 			<div class="modal-body">
 				<input type="hidden" name="id"> 
 				<h1> 
-					Do you want to delete this Student Data?
+					Do you want to delete this Admission Data?
 				</h1>                                                           
 			</div>
 			<div class="modal-footer">
-				<a href='delete.php?User_ID=<?php echo $id; ?>'>
+				<a href='admissiondelete.php?Admission_ID=<?php echo $id; ?>'>
 					<button type="button" class="btn btn-secondary">Yes</button>
 				</a>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"> No </button>
