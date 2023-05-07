@@ -1,85 +1,72 @@
 <?php 
     include "connect2.php";
 
+    $fullname = $_POST['fullname'];
+    $pronoun = $_POST['pronoun'];
+    $address = $_POST['address'];
+    $phoneno = $_POST['phoneno'];
+
+    // Check if an image is required
+    if(empty($_FILES["image"]["name"])){
+    $filename = "";
+    } else {
     $target_dir="../../images/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+    // Check if image file is an actual image or a fake image
+    if (isset($_POST["submit_form_get"])) {
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
 
-    // Check if a file has been uploaded
-    // if(isset($_FILES['image'])) {
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
 
-      // Make sure the file was sent without errors
-    //   if($_FILES['uploaded_file']['error'] == 0) {
-    //     // Connect to the database
-    
-    
-            // Check if image file is an actual image or a fake image
-            if (isset($_POST["submit_form_get"])) {
-                $check = getimagesize($_FILES["image"]["tmp_name"]);
-                if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } else {
-                    echo "File is not an image.";
-                    $uploadOk = 0;
-                }
-            }
+    // Check file size
+    if ($_FILES["image"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
 
-            // Check if file already exists
-            if (file_exists($target_file)) {
-                echo "Sorry, file already exists.";
-                $uploadOk = 0;
-            }
+    // Allow certain file formats
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "jfif") {
+        echo "Sorry, only JPG, JPEG, PNG, JFIF, & GIF files are allowed.";
+        $uploadOk = 0;
+    }
 
-            // Check file size
-            if ($_FILES["image"]["size"] > 500000) {
-                echo "Sorry, your file is too large.";
-                $uploadOk = 0;
-            }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            $filename = htmlspecialchars (basename($_FILES["image"]["name"]));
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+    }
 
-            // Allow certain file formats
-            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "jfif") {
-                echo "Sorry, only JPG, JPEG, PNG, JFIF, & GIF files are allowed.";
-                $uploadOk = 0;
-            }
-
-            // Check if $uploadOk is set to 0 by an error
-            if ($uploadOk == 0) {
-                echo "Sorry, your file was not uploaded.";
-            // if everything is ok, try to upload file
-            } else {
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                
-                    $filename = htmlspecialchars (basename($_FILES["image"]["name"]));
-
-                            
-                    $fullname = $_POST['fullname'];
-                    $pronoun = $_POST['pronoun'];
-                    $address = $_POST['address'];
-                    $phoneno = $_POST['phoneno'];
-
-                    // // No file was uploaded so select this instead
-                    // if(!isset($_FILES['image'])) {
-                    //     $image = "../../images/blank.png";
-                    // } else {
-                    //     $image = $_FILES['image'];
-                    // }
-
-                    $query = "INSERT INTO users VALUES ('','$fullname', '$pronoun', '$address', '$phoneno','$filename')";
+    $query = "INSERT INTO users VALUES ('','$fullname', '$pronoun', '$address', '$phoneno','$filename')";
 
 
-                        if($conn->query($query) === TRUE) {
-                            echo "<script>window.alert('User Successfully Added!'); </script>";
-                            echo "<script>window.location.replace('users.php');</script>";
-                        } else {
-                            echo '<script>window.alert("ERROR!")</script>';
-                        }
-                    } else {
-                        echo "Sorry, there was an error uploading your file.";
-                    }
-                }
+    if($conn->query($query) === TRUE) {
+        echo "<script>window.alert('User Successfully Added!'); </script>";
+        echo "<script>window.location.replace('users.php');</script>";
+    } else {
+        echo '<script>window.alert("ERROR!")</script>';
+    }
         // /* WORKING */
 
         // if (isset ($_POST['submit_form_get'])){
@@ -107,18 +94,6 @@
         /* WORKING ENDS*/
 
 
-    
-
-
-    // $query = "INSERT INTO users VALUES ('','$fullname', '$pronoun', '$address', '$phoneno')";
-
-
-    //     if($conn->query($query) === TRUE) {
-    //         echo "<script>window.alert('User Successfully Added!'); </script>";
-    //         echo "<script>window.location.replace('users.php');</script>";
-    //     } else {
-    //         echo '<script>window.alert("ERROR!")</script>';
-    //     }
 
 ?>
       
