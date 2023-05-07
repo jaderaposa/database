@@ -934,7 +934,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                        <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="" height=""/>
+                                                        <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="40" height="40"/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -990,7 +990,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="" height=""/>
+                                                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="40" height="40"/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
@@ -1046,7 +1046,7 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="" height=""/>
+                                                            <img src="../../images/<?php echo ($user['User_Img'] != null) ? $user['User_Img'] : 'blank.png'; ?>" width="40" height="40"/>
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
