@@ -700,7 +700,7 @@ th.sorting_asc {
                                                 <td><?php echo $row['Date_Admissioned']; ?></td>
                                                 <td class="jaded" style="text-align: center;">
                                                     <a class='btn btn-primary' style="background:#0c0ca9;" href='admissiondisplay.php?Admission_ID=<?php echo $row['Admission_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='useredit.php?User_ID=<?php echo $row['Admission_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <a class='btn btn-success' href='admissionupdateform.php?Admission_ID=<?php echo $row['Admission_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
                                                     <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['Admission_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 </td>
                                             <?php include "admissiondeletemodal.php"; ?>    

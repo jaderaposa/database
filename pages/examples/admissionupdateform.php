@@ -97,7 +97,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> Update Profile | OGCS</title>
+    <title> Update Admission Ticket | OGCS</title>
     <!-- Favicon-->
     <link rel="icon" href="../../xbox.png" type="image/x-icon">
 
@@ -405,7 +405,18 @@
                         <a href="">
                             <span>Home</span>
                         </a>
-                    </li> <!--
+                    </li> 
+                    <li>
+                        <a href="users.php" class="menu-toggle">
+                            <span>Users</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="admissions.php" class="menu-toggle">
+                            <span>Admissions</span>
+                        </a> 
+                    </li> 
+                    <!--
                     <li>
                         <a href="../../pages/typography.html">
                             <i class="material-icons">text_fields</i>
@@ -567,10 +578,10 @@
                             </li>
                         </ul>
                     </li> -->
-                    <li class="active">
+                    <!-- <li class="active">
                         <a href="students2.php" class="menu-toggle">
                             <span>Student Data Table</span>
-                        </a> <!--
+                        </a> <!-
                         <ul class="ml-menu">
                             <li>
                                 <a href="../../pages/tables/normal-tables.html">Normal Tables</a>
@@ -746,7 +757,7 @@
                 </div>
             </div> -->
             <!-- #Footer -->
-        </aside>
+        <!-- </aside> -->
         <!-- #END# Left Sidebar -->
         <!-- Right Sidebar -->
         <!-- <aside id="rightsidebar" class="right-sidebar">
@@ -902,54 +913,60 @@
                     <div class="card">
                         <div class="header">
                         <?php
-                        $user_id = $_GET['User_ID'];
-                        $query = "SELECT * FROM users WHERE User_ID = '$user_id'";
+                        $admission_id = $_GET['Admission_ID'];
+                        $query = "SELECT * FROM admissions WHERE admission_ID = '$admission_id'";
 
                         $result = $conn -> query($query);
                         while($row = $result -> fetch_assoc()){
-                            $user_id = $row['User_ID'];
+                            $user_id = $row['Admission_ID'];
                         ?>
                         
-            <form method="POST" action="update.php" enctype="multipart/form-data">
+            <form method="POST" action="admissionupdate.php" enctype="multipart/form-data">
                 <div class="row clearfix">
                     <div class="col-lg-14 col-md-12 col-sm-10">          
                             <div class="body">
                                 <h2 class="card-inside-title">
-                                    EDIT USER PROFILE
+                                    EDIT ADMISSION DETAILS
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li>
-                                        <button onClick="window.location.href='students2.php';" type="button" class="btn btn-info" href="users.php">Back</button>
+                                        <button onClick="window.location.href='admissions.php';" type="button" class="btn btn-info" href="admissions.php">Back</button>
                                     </li>
                                 </ul>
                                 <br>
                                 <br>           
                                 
                                 <div>
-                                    <input type="hidden" name="id" value="<?php echo $row['User_ID']; ?>" class="form-control"> <br>
+                                    <input type="hidden" name="id" value="<?php echo $row['Admission_ID']; ?>" class="form-control"> <br>
 
-                                    <label for="fullname">Full Name</label>
+                                    <label for="patientno">Patient No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['User_Name']; ?>" placeholder="" name="fullname" required>
+                                            <input type="number" class="form-control" value="<?php echo $row['User_ID']; ?>" placeholder="" name="patientno" required>
                                         </div>
                                     </div>
-                                    <label for="pronoun">Pronoun</label>
+                                    <label for="staffno">Staff No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  class="form-control" value="<?php echo $row['User_Pronoun']; ?>" placeholder="" name="pronoun">
+                                            <input type="number"  class="form-control" value="<?php echo $row['Staff_ID']; ?>" placeholder="" name="staffno">
                                         </div>
                                     </div>
-                                    <label for="phoneno">Phone Number</label>
+                                    <label for="prefer">Preferred Method</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['User_PhoneNo']; ?>" placeholder="" name="phoneno" required>
+                                            <input type="text" class="form-control" value="<?php echo $row['Preferred_Method']; ?>" placeholder="" name="prefer" required>
                                         </div>
                                     </div>
-                                    <label for="address">Address</label>
+                                    <label for="date_of_admission">Date Admissioned</label>
+                                    <div class="form-group">
+                                        <div class="form-line" id="bs_datepicker_container">
+                                            <input type="text"  class="form-control" value="<?php echo $row['Date_Admissioned']; ?>" placeholder="MM/DD/YYYY" name="date_of_admission" required>
+                                        </div>
+                                    </div>
+                                    <label for="admission_description">Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text"  class="form-control" value="<?php echo $row['User_Address']; ?>" placeholder="" name="address" required>
+                                            <input type="text" class="form-control" value="<?php echo $row['Admission_Description']; ?>" placeholder="" name="admission_description" required>
                                         </div>
                                     </div>
                                     <!-- <label for="birthdate">Birth Date</label>
@@ -988,18 +1005,16 @@
                                         </div>
                                     </div> -->
                                     
-                                    <label for="image">Image</label>
+                                    <!-- <label for="image">Image</label>
                                     <div class="form-group" style="display: flex;justify-content: space-between;width: 30%;position: relative;align-items: flex-end;">
                                         &nbsp;&nbsp;&nbsp;
                                         <input type="file" class="form-control" name="image" id="image" min="1" value="<?php echo $row['User_Img']; ?>" accept="image/*">
 
-                                    </div>
+                                    </div> -->
                                     <br>
                                     <button style="margin" class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Update</button>
                                     </form>
                                     <?php
-
-
                                     }
                                     ?>
                                 </div>
