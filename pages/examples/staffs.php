@@ -23,7 +23,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> User List | OGCS </title>
+    <title> Staff List | OGCS </title>
     <!-- Favicon-->
     <link rel="icon" href="" type="image/x-icon">
 
@@ -159,6 +159,11 @@ th.sorting_asc {
                     <li>
                         <a href="admissions.php" class="menu-toggle">
                             <span>Admissions</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="staffs.php" class="menu-toggle">
+                            <span>Staffs</span>
                         </a> 
                     </li>
                     <!--
@@ -661,11 +666,11 @@ th.sorting_asc {
                     <div class="card">
                         <div class="header" style="display: flex; justify-content:space-between;padding: 15px;">
                             <h2>
-                                USER LIST
+                                STAFF LIST
                             </h2>
                             <!-- <ul class="header-dropdown m-r--5"> -->
                             <section>
-                            <a class='btn btn-secondary' href='useraddform.php' >Add</a>
+                            <a class='btn btn-secondary' href='staffaddform.php'>Add</a>
                             </section>
                             </ul>
                         </div>
@@ -676,34 +681,34 @@ th.sorting_asc {
                                             <tr>
                                                 <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
                                                 <th>Name&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
-                                                <th>Pronoun&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
+                                                <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i>&nbsp;&nbsp;</th>
                                                 <th>Phone No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
-                                                <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
-                                                <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
+                                                <th>Position&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i>&nbsp;&nbsp;</th>
+                                                <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse"></i>&nbsp;&nbsp;</th>                                         
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
                                     
                                         include "connect2.php";                           
-                                        $query = "SELECT * FROM users";                                   
+                                        $query = "SELECT * FROM staffs";                                   
                                         $result = $conn -> query($query);                                    
                                         while($row = $result -> fetch_assoc()){
-                                        $id = $row['User_ID'];
+                                        $id = $row['Staff_ID'];
                                         
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['User_ID']; ?></td>
-                                                <td><?php echo $row['User_Name']; ?></td>
-                                                <td><?php echo $row['User_Pronoun']; ?></td>
-                                                <td><?php echo $row['User_PhoneNo']; ?></td>
-                                                <td><?php echo $row['User_Address']; ?></td>
+                                                <td><?php echo $row['Staff_ID']; ?></td>
+                                                <td><?php echo $row['Staff_Name']; ?></td>
+                                                <td><?php echo $row['Staff_Address']; ?></td>
+                                                <td><?php echo $row['Staff_PhoneNo']; ?></td>
+                                                <td><?php echo $row['Staff_Position']; ?></td>
                                                 <td class="jaded" style="text-align: center;">
-                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='userdisplay.php?User_ID=<?php echo $row['User_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='userupdateform.php?User_ID=<?php echo $row['User_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['User_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='staffdisplay.php?Staff_ID=<?php echo $row['Staff_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
+                                                    <a class='btn btn-success' href='staffupdateform.php?Staff_ID=<?php echo $row['Staff_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['Staff_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 </td>
-                                            <?php include "userdeletemodal.php"; ?>    
+                                            <?php include "staffdeletemodal.php"; ?>    
                                             </tr>
                                         <?php                                      
                                         }                                                                 

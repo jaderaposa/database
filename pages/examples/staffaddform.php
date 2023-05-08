@@ -1,34 +1,14 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
-
-<style>
-
-    #dialogBox {
-        position: fixed;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 30px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        z-index: 9999;
-    }
-
-    th {
-        text-align: none;
-    }
-
-</style>
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> User List | OGCS </title>
+    <title> Add Staff | OGCS</title>
     <!-- Favicon-->
-    <link rel="icon" href="" type="image/x-icon">
-
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/ee7690777c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../..    /xbox.png" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -43,14 +23,17 @@
     <!-- Animation Css -->
     <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- another animation -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
-    <!-- JQuery DataTable Css -->
-    <link href="../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap DatePicker Css -->
+    <link href="../../plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="../../plugins/waitme/waitMe.css" rel="stylesheet" />
+
+    <!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
@@ -59,15 +42,8 @@
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<!-- <style>
-
-th.sorting_asc {
-    width: 56px;
-}
-
-</style> -->
-
 <body class="theme-red">
+    <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
@@ -104,14 +80,202 @@ th.sorting_asc {
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand jaded" href="../../index.html">Online Guidance and Counseling System</a>
+                <a class="navbar-brand" href="../../index.html">Online Guidance and Counseling System</a>
             </div>
-            
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search 
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications 
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">7</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">person_add</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>12 new members joined</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">add_shopping_cart</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>4 sales made</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-red">
+                                                <i class="material-icons">delete_forever</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy Doe</b> deleted account</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">mode_edit</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy</b> changed name</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> commented your post</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">cached</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> updated status</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">settings</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>Settings updated</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
                     <!-- #END# Notifications -->
-                    <!-- Tasks -->
-                    <!-- #END# Tasks -->
-                    <!-- <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li> -->
-                </ul>
+                    <!-- Tasks 
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">flag</i>
+                            <span class="label-count">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">TASKS</li>
+                            <li class="body">
+                                <ul class="menu tasks">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Footer display issue
+                                                <small>32%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Make new buttons
+                                                <small>45%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Create new dashboard
+                                                <small>54%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Solve transition issue
+                                                <small>65%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Answer GitHub questions
+                                                <small>92%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks 
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul> -->
             </div>
         </div>
     </nav>
@@ -136,14 +300,14 @@ th.sorting_asc {
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="logout.php"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href=" logout.php"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- #User Info -->
             <!-- Menu -->
-             <div class="menu">
+            <div class="menu">
                 <ul class="list">
                     <li class="header">NAVIGATION</li>
                     <li>
@@ -159,6 +323,11 @@ th.sorting_asc {
                     <li>
                         <a href="admissions.php" class="menu-toggle">
                             <span>Admissions</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="staffs.php" class="menu-toggle">
+                            <span>Staffs</span>
                         </a> 
                     </li>
                     <!--
@@ -326,7 +495,7 @@ th.sorting_asc {
                     <!-- <li class="active">
                         <a href="users.php" class="menu-toggle">
                             <span>Users</span>
-                        </a> <!-- 
+                        </a> <!--
                         <ul class="ml-menu">
                             <li>
                                 <a href="../../pages/tables/normal-tables.html">Normal Tables</a>
@@ -500,11 +669,12 @@ th.sorting_asc {
                 <div class="version">
                     <b>Version: </b> 1.0.5
                 </div>
-            </div> -->
-            <!-- #Footer -->
+            </div>
+            #Footer -->
+        </aside>
         <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
-        <!-- <aside id="rightsidebar" class="right-sidebar">
+        <!-- Right Sidebar 
+        <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                 <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
                 <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
@@ -644,82 +814,107 @@ th.sorting_asc {
                     </div>
                 </div>
             </div>
-        </aside> -->
+        </aside>
         <!-- #END# Right Sidebar -->
     </section>
 
     <section class="content">
-        <div class="container-fluid">
+    <div class="container-fluid">
             <!-- <div class="block-header">
-                <!-- <h2>
-                    JADED'S DATA TABLE
-                </h2> 
+                <h2>JADED'S STUDENT CREATE</h2>
             </div> -->
-            <!-- Basic Examples -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-8">
                     <div class="card">
-                        <div class="header" style="display: flex; justify-content:space-between;padding: 15px;">
-                            <h2>
-                                USER LIST
-                            </h2>
-                            <!-- <ul class="header-dropdown m-r--5"> -->
-                            <section>
-                            <a class='btn btn-secondary' href='useraddform.php' >Add</a>
-                            </section>
-                            </ul>
-                        </div>
+                        <div class="header">
+                        
+            <form method="POST" action="staffadd.php" enctype="multipart/form-data">
+                <div class="row clearfix">
+                    <div class="col-lg-14 col-md-12 col-sm-10">          
                             <div class="body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
-                                                <th>Name&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
-                                                <th>Pronoun&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
-                                                <th>Phone No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
-                                                <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
-                                                <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
+                                <h2 class="card-inside-title">
+                                    CREATE STAFF PROFILE
+                                </h2>
+                                <ul class="header-dropdown m-r--5">
+                                <li>
+                                <button onClick="window.location.href='staffs.php';" type="button" class="btn btn-info" href="users.php">Back</button>
+                                </li>
+                            </ul>
+                                <br>
+                                <br>                          
+                                
+                                <div class="margintop20px">
+                                    <label for="staffname">Name</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" placeholder="" name="staffname" required>
+                                        </div>
+                                    </div>
+                                    <label for="staffaddress">Address</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text"  class="form-control" placeholder="" name="staffaddress">
+                                        </div>
+                                    </div>
+                                    <label for="staffphone">Phone Number</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="number" class="form-control" placeholder="" name="staffphone" required>
+                                        </div>
+                                    </div>
+                                    <label for="staffpos">Position</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text"  class="form-control" placeholder="" name="staffpos" required>
+                                        </div>
+                                    </div>
+                                    <!-- <label for="birthdate">Birth Date</label>
+                                    <div class="form-group">
+                                        <div class="form-line" id="bs_datepicker_container">
+                                            <input type="text" id="birthdate" name="birthdate" class="form-control" placeholder="MM/DD/YYYY" required>
+                                        </div>
+                                    </div>
+                                    <label for="sex">Sex</label>
+                                    <div class="form-group">
+                                        <div>
+                                            <input name="sex" type="radio" id="radio_1" value="Male"  required/>
+                                            <label for="radio_1">Male</label>
+                                            <input name="sex" type="radio" id="radio_2" value="Female" required/>
+                                            <label for="radio_2">Female</label>
+                                        </div>
+                                    </div>
+                                    <label for="school">School</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text"  class="form-control" placeholder="" name="school" required>
+                                        </div>
+                                    </div> -->
                                     
-                                        include "connect2.php";                           
-                                        $query = "SELECT * FROM users";                                   
-                                        $result = $conn -> query($query);                                    
-                                        while($row = $result -> fetch_assoc()){
-                                        $id = $row['User_ID'];
-                                        
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $row['User_ID']; ?></td>
-                                                <td><?php echo $row['User_Name']; ?></td>
-                                                <td><?php echo $row['User_Pronoun']; ?></td>
-                                                <td><?php echo $row['User_PhoneNo']; ?></td>
-                                                <td><?php echo $row['User_Address']; ?></td>
-                                                <td class="jaded" style="text-align: center;">
-                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='userdisplay.php?User_ID=<?php echo $row['User_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='userupdateform.php?User_ID=<?php echo $row['User_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['User_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
-                                                </td>
-                                            <?php include "userdeletemodal.php"; ?>    
-                                            </tr>
-                                        <?php                                      
-                                        }                                                                 
-                                        ?>
-                                        </tbody>
-                                    </table>
+                                    <label for="image">Image</label>
+                                    <div class="form-group">
+                                        <input type="file"  class="form-control" name="image" id="image" accept="image/*">
+                                    </div> 
+                                    <br>   
+                                    <div>                      
+                                        <button style="width: 10%;display: flex;margin: auto;justify-content: center;position: relative;padding: 10px;font-size: 1.5rem;"class="btn btn-block bg-pink waves-effect" type="submit" name="submit_form_get">Create</button>
+                                    </div>
+                                    </form> 
                                 </div>
-                            </div>
-                        </div>
+                            </div>                                                                                                
+                        </div>                        
                     </div>
                 </div>
+                </form>
             </div>
-            <!-- #END# Basic Examples --> 
-            </div>
-
     </section>
+    
+    <?php 
+    // $conn = mysqli_connect("localhost", "root","");
+    // $database = myqsli_select_db($conn,'projectcrud');
+
+    // if (isset($_GET['']))
+
+    ?>
+    
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -736,20 +931,21 @@ th.sorting_asc {
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
-    <!-- Jquery DataTable Plugin Js -->
-    <script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    <!-- Autosize Plugin Js -->
+    <script src="../../plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="../../plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="../../plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
-    <script src="../../js/pages/tables/jquery-datatable.js"></script>
+    <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
