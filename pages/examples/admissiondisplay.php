@@ -822,129 +822,76 @@
                 if(isset($_GET['Admission_ID']))
                 {
                     $admission_id = mysqli_real_escape_string($conn, $_GET['Admission_ID']);
-                    $query = "SELECT *
+                    $query = "SELECT admissions.Admission_ID, users.User_Name, staffs.Staff_Name, staffs.Staff_Position, admissions.Preferred_Method, admissions.Date_Admissioned, admissions.Admission_Description
                             FROM admissions
                             JOIN users ON admissions.User_ID = users.User_ID
-                            JOIN staffs ON admissions.Staff_ID = staffs.Staff_ID;";
+                            JOIN staffs ON admissions.Staff_ID = staffs.Staff_ID
+                            WHERE admissions.Admission_ID = $admission_id";
                     $query_run = mysqli_query($conn, $query);
 
                     if(mysqli_num_rows($query_run) > 0)
                     {
-                        $admission = mysqli_fetch_array($query_run);
-                        ?>
-            
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="card">
+                        $admission = mysqli_fetch_assoc($query_run);
+            ?>
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="card">
+                                    <div class="module-border-wrap">
+                                        <div class="body">
+                                            <h2 class="card-inside-title">
+                                                Admission Details
+                                            </h2>
+                                            <br>                                                 
+                                            <br>                                                   
+                                            <label for=""><u>Admission ID</u></label>
+                                            <div class="form-group">                                                          
+                                                <p class="form-control">
+                                                    <?=$admission['Admission_ID'];?>
+                                                </p>
+                                            </div>
+                                            <label for=""><u>Patient Name</u></label>
+                                            <div class="form-group">                                                          
+                                                <p class="form-control">
+                                                    <?=$admission['User_Name'];?>
+                                                </p>
+                                            </div>
+                                            <label for=""><u>Admitted By</u></label>
+                                            <div class="form-group">                                                          
+                                                <p class="form-control">
+                                                    <?=$admission['Staff_Name'];?>,&nbsp;<?=$admission['Staff_Position'];?>
+                                                </p>
+                                            </div>
+                                            <label for=""><u>Preferred Method</u></label>
+                                            <div class="form-group">                                                          
+                                                <p class="form-control">
+                                                    <?=$admission['Preferred_Method'];?>
+                                                </p>
+                                            </div>
+                                            <label for=""><u>Date Admissioned</u></label>
+                                            <div class="form-group">                                                          
+                                                <p class="form-control">
+                                                    <?=$admission['Date_Admissioned'];?>
+                                                </p>
+                                            </div>
+                                            <label for=""><u>Description</u></label>
+                                            <div class="form-group">                                                          
+                                                <p class="form-control">
+                                                    <?=$admission['Admission_Description'];?>
+                                                </p>
+                                            </div>
                                             <?php
-                                    
-                                            // $image = $student["image"];
-
-                                            ?> 
-                                            <div class="module-border-wrap">
-                                                <div class="body">
-                                                        <!-- <img src="../../images/<?php echo $admission['image'];?>" width="220" height="200" alt="Profile_Img" style="float: right; border: 5px solid black;"/>                                                       -->
-                                                    <?php   
                                                     }       
-                                                    ?>
-                                                    <h2 class="card-inside-title">
-                                                        Admission Details
-                                                    </h2>
-                                                    
-                                                    
-                                                    <!-- <ul class="header-dropdown m-r--5">
-                                                        <li>
-                                                        <a class='btn btn-secondary' href='studentform2.php'>Add</a>
-                                                        </li>
-                                                    </ul> -->  
-                                                    <br>                                                 
-                                                    <br>                                                   
-                                                    <label for=""><u>Admission ID</u></label>
-                                                    <div class="form-group">                                                          
-                                                        <p class="form-control">
-                                                            <?=$admission['Admission_ID'];?>
-                                                        </p>
-                                                    </div>
-                                                    <label for=""><u>Patient Name</u></label>
-                                                    <div class="form-group">                                                          
-                                                        <p class="form-control">
-                                                            <?=$admission['User_Name'];?>
-                                                        </p>
-                                                    </div>
-                                                    <label for=""><u>Admitted By</u></label>
-                                                    <div class="form-group">                                                          
-                                                        <p class="form-control">
-                                                            <?=$admission['Staff_Name'];?>,&nbsp;<?=$admission['Staff_Position'];?>
-                                                        </p>
-                                                    </div>
-                                                    <label for=""><u>Preferred Method</u></label>
-                                                    <div class="form-group">                                                          
-                                                        <p class="form-control">
-                                                            <?=$admission['Preferred_Method'];?>
-                                                        </p>
-                                                    </div>
-                                                    <label for=""><u>Date Admissioned</u></label>
-                                                    <div class="form-group">                                                          
-                                                        <p class="form-control">
-                                                            <?=$admission['Date_Admissioned'];?>
-                                                        </p>
-                                                    </div>
-                                                    <label for=""><u>Description</u></label>
-                                                    <div class="form-group">                                                          
-                                                        <p class="form-control">
-                                                            <?=$admission['Admission_Description'];?>
-                                                        </p>
-                                                    </div>
-                                                    <!-- <label for="middlename"><u>Middle name</u></label>
-                                                    <div class="form-group">
-                                                        <p class="form-control">
-                                                            <?=$student['middlename'];?>
-                                                        </p>
-                                                    </div>
-                                                    <label for="lastname"><u>Last name</u></label>
-                                                    <div class="form-group">
-                                                        <p class="form-control">
-                                                            <?=$student['lastname'];?>
-                                                        </p>                                                            
-                                                    </div> -->
-                                                    <!-- <label for="birthdate"><u>Birth Date</u></label>
-                                                    <div class="form-group">
-                                                        <p class="form-control">
-                                                            Was born in <b><?=$student['birthdate'];?></b>
-                                                        </p>                                                            
-                                                    </div>
-                                                    <label for="sex"><u>Sex</u></label>
-                                                    <div class="form-group">
-                                                        <p class="form-control">
-                                                            <b><?=$student['sex'];?></b>
-                                                        </p>                                                            
-                                                    </div>
-                                                    <label for="school"><u>School</u></label>
-                                                    <div class="form-group">
-                                                        <p class="form-control">
-                                                            Studying in <b><?=$student['school'];?></b>
-                                                        </p>                                                            
-                                                    </div>
-                                                    <label for="address"><u>Address</u></label>
-                                                    <div class="form-group">
-                                                        <p class="form-control">
-                                                            Lives in <b><?=$student['address'];?></b>
-                                                        </p>                                                            
-                                                    </div> -->
-                                                   
-                                                    </form>
-                                                    <?php
-                                                        }
-                                                    
                                                     else 
                                                     {
                                                         echo "<h4>No Such ID Found</h4>";
                                                     }
-                                                    ?>
+                                                }
+                                            ?>
+
                                                     <br>
                                                     <br>
                                                     <a class='btn btn-danger' href='admissions.php'>Back</a>
-                                                </div>                                                                                                                                                                          
+                                                <div>                                                                                                                                                                          
                                             </div>                        
                                         </div>
                                     </div>
