@@ -966,22 +966,28 @@
                                             <input type="number"  class="form-control" value="<?php echo $row['Staff_ID']; ?>" placeholder="" name="staffno">
                                         </div>
                                     </div>
-                                    <label for="prefer">Counselor No.</label>
+                                    <label for="counselorno">Counselor No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['Preferred_Method']; ?>" placeholder="" name="prefer" required>
+                                            <input type="text" class="form-control" value="<?php echo $row['Counselor_ID']; ?>" placeholder="" name="counselorno" required>
                                         </div>
                                     </div>
-                                    <label for="date_of_admission">Date of Referral</label>
+                                    <label for="date_of_referral">Date of Referral</label>
                                     <div class="form-group">
                                         <div class="form-line" id="bs_datepicker_container">
-                                            <input type="text"  class="form-control" value="<?php echo $row['Referral_Date']; ?>" placeholder="MM/DD/YYYY" name="date_of_admission" required>
+                                            <input type="text"  class="form-control" value="<?php echo $row['Referral_Date']; ?>" placeholder="MM/DD/YYYY" name="date_of_referral" required>
                                         </div>
                                     </div>
-                                    <label for="admission_description">Description</label>
+                                    <label for="referral_situation">Situation</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['Admission_Description']; ?>" placeholder="" name="admission_description" required>
+                                            <input type="text" class="form-control" value="<?php echo $row['Referral_Situation']; ?>" placeholder="" name="referral_situation" required>
+                                        </div>
+                                    </div>
+                                    <label for="referral_description">Description</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="<?php echo $row['Referral_Description']; ?>" placeholder="" name="referral_description" required>
                                         </div>
                                     </div>
                                     <!-- <label for="birthdate">Birth Date</label>

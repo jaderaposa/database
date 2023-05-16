@@ -5,17 +5,18 @@ include 'connect2.php';
     $id = $_POST['id'];
     $patientno = $_POST['patientno'];
     $staffno = $_POST['staffno'];
-    $prefer = $_POST['prefer'];
-    $doa = $_POST['date_of_admission'];
-    $addes = $_POST['admission_description'];
+    $couselorno = $_POST['counselorno'];
+    $dor = $_POST['date_of_referral'];
+    $referral_situation = $_POST['referral_situation'];
+    $referral_description = $_POST['referral_description'];
 
 
-    $query = "UPDATE admissions SET User_ID='$patientno', Staff_ID='$staffno', Preferred_Method='$prefer', Date_Admissioned='$doa', Admission_Description='$addes' WHERE Admission_ID='$id'";
+    $query = "UPDATE referrals SET User_ID='$patientno', Staff_ID='$staffno', Counselor_ID='$couselorno', Referral_Date='$dor', Referral_Situation='$referral_situation', Referral_Description='$referral_description' WHERE Referral_ID='$id'";
 
 
         if($conn->query($query) === TRUE) {
             echo "<script>window.alert('Ticket Successfully Updated!'); </script>";
-            echo "<script>window.location.assign('admissions.php');</script>";
+            echo "<script>window.location.assign('referrals.php');</script>";
         } else {
             echo '<script>window.alert("ERROR!")</script>';
         }
