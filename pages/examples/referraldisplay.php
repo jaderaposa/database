@@ -312,7 +312,7 @@
                         <a href="">
                             <span>Home</span>
                         </a>
-                    </li> 
+                    </li>
                     <li>
                         <a href="users.php" class="menu-toggle">
                             <span>Users</span>
@@ -328,6 +328,16 @@
                             <span>Staffs</span>
                         </a> 
                     </li>
+                    <li>
+                        <a href="referrals.php" class="menu-toggle">
+                            <span>Referrals</span>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="counselors.php" class="menu-toggle">
+                            <span>Counselors</span>
+                        </a> 
+                    </li> 
                     <!--
                     <li>
                         <a href="../../pages/typography.html">
@@ -824,19 +834,20 @@
             <!-- Input -->
             <?php
                 include "connect2.php";
-                if(isset($_GET['Admission_ID']))
+                if(isset($_GET['Referral_ID']))
                 {
-                    $admission_id = mysqli_real_escape_string($conn, $_GET['Admission_ID']);
-                    $query = "SELECT admissions.Admission_ID, users.User_Name, staffs.Staff_Name, staffs.Staff_Position, admissions.Preferred_Method, admissions.Date_Admissioned, admissions.Admission_Description
-                            FROM admissions
-                            JOIN users ON admissions.User_ID = users.User_ID
-                            JOIN staffs ON admissions.Staff_ID = staffs.Staff_ID
-                            WHERE admissions.Admission_ID = $admission_id";
+                    $referral_id = mysqli_real_escape_string($conn, $_GET['Referral_ID']);
+                    $query = "SELECT referrals.Referral_ID, users.User_Name, staffs.Staff_Name, staffs.Staff_Position, counselors.Counselor_Name, referrals.Referral_Date, referrals.Referral_Situation, referrals.Referral_Description
+                            FROM referrals
+                            JOIN users ON referrals.User_ID = users.User_ID
+                            JOIN staffs ON referrals.Staff_ID = staffs.Staff_ID
+                            JOIN counselors ON referrals.Counselor_ID = counselors.Counselor_ID
+                            WHERE referrals.Referral_ID = $referral_id";
                     $query_run = mysqli_query($conn, $query);
 
                     if(mysqli_num_rows($query_run) > 0)
                     {
-                        $admission = mysqli_fetch_assoc($query_run);
+                        $referral = mysqli_fetch_assoc($query_run);
             ?>
                         <div class="row clearfix">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -844,44 +855,44 @@
                                     <div class="module-border-wrap">
                                         <div class="body">
                                             <h2 class="card-inside-title">
-                                                Admission Details
+                                                Referral Details
                                             </h2>
                                             <br>                                                 
                                             <br>                                                   
                                             <label for=""><u>Admission ID</u></label>
                                             <div class="form-group">                                                          
                                                 <p class="form-control">
-                                                    <?=$admission['Admission_ID'];?>
+                                                    <?=$referral['Referral_ID'];?>
                                                 </p>
                                             </div>
                                             <label for=""><u>Patient Name</u></label>
                                             <div class="form-group">                                                          
                                                 <p class="form-control">
-                                                    <?=$admission['User_Name'];?>
+                                                    <?=$referral['User_Name'];?>
                                                 </p>
                                             </div>
                                             <label for=""><u>Admitted By</u></label>
                                             <div class="form-group">                                                          
                                                 <p class="form-control">
-                                                    <?=$admission['Staff_Name'];?>,&nbsp;<?=$admission['Staff_Position'];?>
+                                                    <?=$referral['Staff_Name'];?>,&nbsp;<?=$referral['Staff_Position'];?>
                                                 </p>
                                             </div>
-                                            <label for=""><u>Preferred Method</u></label>
+                                            <label for=""><u>Referred To</u></label>
                                             <div class="form-group">                                                          
                                                 <p class="form-control">
-                                                    <?=$admission['Preferred_Method'];?>
+                                                    <?=$referral['Counselor_Name'];?>
                                                 </p>
                                             </div>
-                                            <label for=""><u>Date Admissioned</u></label>
+                                            <label for=""><u>Situation</u></label>
                                             <div class="form-group">                                                          
                                                 <p class="form-control">
-                                                    <?=$admission['Date_Admissioned'];?>
+                                                    <?=$referral['Referral_Situation'];?>
                                                 </p>
                                             </div>
                                             <label for=""><u>Description</u></label>
                                             <div class="form-group">                                                          
                                                 <p class="form-control">
-                                                    <?=$admission['Admission_Description'];?>
+                                                    <?=$referral['Referral_Description'];?>
                                                 </p>
                                             </div>
                                             <?php
@@ -895,7 +906,7 @@
 
                                                     <br>
                                                     <br>
-                                                    <a class='btn btn-danger' href='admissions.php'>Back</a>
+                                                    <a class='btn btn-danger' href='referrals.php'>Back</a>
                                                 <div>                                                                                                                                                                          
                                             </div>                        
                                         </div>

@@ -167,6 +167,11 @@ th.sorting_asc {
                         </a> 
                     </li>
                     <li>
+                        <a href="referrals.php" class="menu-toggle">
+                            <span>Referrals</span>
+                        </a> 
+                    </li> 
+                    <li>
                         <a href="counselors.php" class="menu-toggle">
                             <span>Counselors</span>
                         </a> 
