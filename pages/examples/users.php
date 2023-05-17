@@ -147,11 +147,6 @@ th.sorting_asc {
                 <ul class="list">
                     <li class="header">NAVIGATION</li>
                     <li>
-                        <a href="">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="users.php" class="menu-toggle">
                             <span>Users</span>
                         </a> 
@@ -176,6 +171,16 @@ th.sorting_asc {
                             <span>Counselors</span>
                         </a> 
                     </li> 
+                    <li>
+                        <a href="appointments.php" class="menu-toggle">
+                            <span>Appointments</span>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="payments.php" class="menu-toggle">
+                            <span>Payments</span>
+                        </a> 
+                    </li>   
                     <!--
                     <li>
                         <a href="../../pages/typography.html">
@@ -676,7 +681,7 @@ th.sorting_asc {
                     <div class="card">
                         <div class="header" style="display: flex; justify-content:space-between;padding: 15px;">
                             <h2>
-                                USER LIST
+                                Users
                             </h2>
                             <!-- <ul class="header-dropdown m-r--5"> -->
                             <section>

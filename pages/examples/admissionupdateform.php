@@ -402,11 +402,6 @@
                 <ul class="list">
                     <li class="header">NAVIGATION</li>
                     <li>
-                        <a href="">
-                            <span>Home</span>
-                        </a>
-                    </li> 
-                    <li>
                         <a href="users.php" class="menu-toggle">
                             <span>Users</span>
                         </a> 
@@ -414,6 +409,31 @@
                     <li>
                         <a href="admissions.php" class="menu-toggle">
                             <span>Admissions</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="staffs.php" class="menu-toggle">
+                            <span>Staffs</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="referrals.php" class="menu-toggle">
+                            <span>Referrals</span>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="counselors.php" class="menu-toggle">
+                            <span>Counselors</span>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="appointments.php" class="menu-toggle">
+                            <span>Appointments</span>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="payments.php" class="menu-toggle">
+                            <span>Payments</span>
                         </a> 
                     </li> 
                     <!--

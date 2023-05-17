@@ -311,11 +311,6 @@
                 <ul class="list">
                     <li class="header">NAVIGATION</li>
                     <li>
-                        <a href="">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="users.php" class="menu-toggle">
                             <span>Users</span>
                         </a> 
