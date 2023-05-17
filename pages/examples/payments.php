@@ -23,7 +23,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> Appointments | OGCS </title>
+    <title> Payments | OGCS </title>
     <!-- Favicon-->
     <link rel="icon" href="" type="image/x-icon">
 
@@ -179,6 +179,11 @@ th.sorting_asc {
                     <li>
                         <a href="appointments.php" class="menu-toggle">
                             <span>Appointments</span>
+                        </a> 
+                    </li> 
+                    <li>
+                        <a href="payments.php" class="menu-toggle">
+                            <span>Payments</span>
                         </a> 
                     </li> 
                     <!--<li>
@@ -681,11 +686,11 @@ th.sorting_asc {
                         
                         <div class="header" style="display: flex; justify-content:space-between;padding: 15px;">
                             <h2>
-                                Appointments
+                                Payments
                             </h2>
                             <!-- <ul class="header-dropdown m-r--5"> -->
                             <section>
-                            <a class='btn btn-secondary' href='appointmentaddform.php' >Add</a>
+                            <a class='btn btn-secondary' href='paymentaddform.php' >Add</a>
                             </section>
                             </ul>
                         </div>
@@ -696,10 +701,8 @@ th.sorting_asc {
                                             <tr>
                                                 <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
                                                 <th>Patient No.&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
-                                                <th>Staff No.&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
-                                                <th>Counselor No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
-                                                <th>Date Start&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
-                                                <th>Date End&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i></i>&nbsp;&nbsp;</th>
+                                                <th>Appointment No.&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
+                                                <th>Date of Payment&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
                                                 <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
                                             </tr>
                                         </thead>
@@ -718,25 +721,23 @@ th.sorting_asc {
                                         <?php
                                     
                                         include "connect2.php";                           
-                                        $query = "SELECT * FROM appointments";                                   
+                                        $query = "SELECT * FROM payments";                                   
                                         $result = $conn -> query($query);                                    
                                         while($row = $result -> fetch_assoc()){
-                                        $id = $row['Appointment_ID'];
+                                        $id = $row['Payment_ID'];
                                         
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['Appointment_ID']; ?></td>
+                                                <td><?php echo $row['Payment_ID']; ?></td>
                                                 <td><?php echo $row['User_ID']; ?></td>
-                                                <td><?php echo $row['Staff_ID']; ?></td>
-                                                <td style="width: 27%;"><?php echo $row['Counselor_ID']; ?></td>
-                                                <td><?php echo $row['Date_Start']; ?></td>
-                                                <td><?php echo $row['Date_End']; ?></td>
+                                                <td><?php echo $row['Appointment_ID']; ?></td>
+                                                <td><?php echo $row['DOP']; ?></td>
                                                 <td class="jaded" style="text-align: center;">
-                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='appointmentdisplay.php?Appointment_ID=<?php echo $row['Appointment_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
-                                                    <a class='btn btn-success' href='appointmentupdateform.php?Appointment_ID=<?php echo $row['Appointment_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['Appointment_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    <a class='btn btn-primary' style="background:#0c0ca9;" href='paymentdisplay.php?Payment_ID=<?php echo $row['Payment_ID']; ?>'>VIEW  <i class="fa fa-search"  aria-hidden="true"></i></a>
+                                                    <a class='btn btn-success' href='paymentupdateform.php?Payment_ID=<?php echo $row['Payment_ID']; ?>'>UPDATE  <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <button type="button" class="btn btn-danger" data-target="#deleteModal<?php echo $row['Payment_ID']; ?>" data-toggle="modal">DELETE  <i class="fa fa-trash" aria-hidden="true"></i></button>
                                                 </td>
-                                            <?php include "appointmentdeletemodal.php"; ?>    
+                                            <?php include "paymentdeletemodal.php"; ?>    
                                             </tr>
                                         <?php                                      
                                         }                                                                 

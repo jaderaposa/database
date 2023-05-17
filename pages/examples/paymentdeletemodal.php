@@ -1,10 +1,10 @@
 <!-- Modal -->
 
-<div class="modal fade" id="deleteModal<?php echo $row['Appointment_ID']?>" tabindex="-1" role="dialog">
+<div class="modal fade" id="deleteModal<?php echo $row['Payment_ID']?>" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel"> Delete Appointment Data </h5>
+				<h5 class="modal-title" id="exampleModalLabel"> Delete Payment Data </h5>
 				<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button> -->
@@ -15,11 +15,11 @@
 			<div class="modal-body">
 				<input type="hidden" name="id"> 
 				<h1> 
-					Do you want to delete this Appointment Data?
+					Do you want to delete this Payment Data?
 				</h1>                                                           
 			</div>
 			<div class="modal-footer">
-				<a href='appointmentdelete.php?Appointment_ID=<?php echo $id; ?>'>
+				<a href='paymentdelete.php?Payment_ID=<?php echo $id; ?>'>
 					<button type="button" class="btn btn-secondary">Yes</button>
 				</a>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"> No </button>
