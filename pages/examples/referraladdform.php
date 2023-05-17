@@ -865,10 +865,10 @@
                                             <input type="number"  class="form-control" placeholder="" name="staffno">
                                         </div>
                                     </div>
-                                    <label for="counselorno">Counselor_ID</label>
+                                    <label for="counselorno">Counselor No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="counselorno" required>
+                                            <input type="number" class="form-control" placeholder="" name="counselorno" required>
                                         </div>
                                     </div>
                                     <label for="date_of_referral">Date of Referral</label>

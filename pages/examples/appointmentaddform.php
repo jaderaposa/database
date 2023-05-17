@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> Referral Create | OGCS</title>
+    <title> Appointment Create | OGCS</title>
     <!-- Favicon-->
     <link rel="icon" href="../..    /xbox.png" type="image/x-icon">
 
@@ -837,12 +837,12 @@
                     <div class="card">
                         <div class="header">
                         
-            <form method="POST" action="referraladd.php" enctype="multipart/form-data">
+            <form method="POST" action="appointmentadd.php" enctype="multipart/form-data">
                 <div class="row clearfix">
                     <div class="col-lg-14 col-md-12 col-sm-10">          
                             <div class="body">
                                 <h2 class="card-inside-title">
-                                    CREATE REFERRAL TICKET
+                                    CREATE APPOINTMENT TICKET
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                 <li>
@@ -865,28 +865,34 @@
                                             <input type="number"  class="form-control" placeholder="" name="staffno">
                                         </div>
                                     </div>
-                                    <label for="counselorno">Counselor_ID</label>
+                                    <label for="counselorno">Counselor No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="counselorno" required>
+                                            <input type="number" class="form-control" placeholder="" name="counselorno" required>
                                         </div>
                                     </div>
-                                    <label for="date_of_referral">Date of Referral</label>
+                                    <label for="date_start">Date Start</label>
                                     <div class="form-group">
                                         <div class="form-line" id="bs_datepicker_container">
-                                            <input type="text"  class="form-control" placeholder="MM/DD/YYYY" name="date_of_referral" required>
+                                            <input type="text"  class="form-control" placeholder="MM/DD/YYYY" name="date_start" required>
                                         </div>
                                     </div>
-                                    <label for="referral_situation">Situation</label>
+                                    <label for="date_end">Date End</label>
                                     <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="referral_situation" required>
+                                        <div class="form-line" id="bs_datepicker_container">
+                                            <input type="text"  class="form-control" placeholder="MM/DD/YYYY" name="date_end" required>
                                         </div>
                                     </div>
-                                    <label for="referral_description">Description</label>
+                                    <label for="counseling_type">Counseling Type</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="referral_description" required>
+                                            <input type="text" class="form-control" placeholder="" name="counseling_type" required>
+                                        </div>
+                                    </div>
+                                    <label for="appointment_purpose">Appointment Purpose</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" placeholder="" name="appointment_purpose" required>
                                         </div>
                                     </div>
                                     <!-- <label for="birthdate">Birth Date</label>
