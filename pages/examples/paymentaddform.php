@@ -861,13 +861,51 @@
                                     <label for="patientno">Patient No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" class="form-control" placeholder="" name="patientno" required>
+                                            <?php
+                                            // Connect to your MySQL database
+                                            include 'connect2.php';
+
+                                            // Retrieve existing values from your database
+                                            $sql = "SELECT User_ID FROM users";
+                                            $result = $conn->query($sql);
+                                            $valid_values = array();
+                                            while($row = $result->fetch_assoc()) {
+                                                $valid_values[] = $row['User_ID'];
+                                            }
+                                            $conn->close();
+
+                                            // Display the select element with options for valid values
+                                            echo '<select class="form-control" name="patientno" required>';
+                                            foreach ($valid_values as $value) {
+                                                echo '<option value="'.$value.'">'.$value.'</option>';
+                                            }
+                                            echo '</select>';
+                                            ?>
                                         </div>
                                     </div>
                                     <label for="appointmentno">Appointment No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number"  class="form-control" placeholder="" name="appointmentno">
+                                            <?php
+                                            // Connect to your MySQL database
+                                            include 'connect2.php';
+
+                                            // Retrieve existing values from your database
+                                            $sql = "SELECT Appointment_ID FROM appointments";
+                                            $result = $conn->query($sql);
+                                            $valid_values = array();
+                                            while($row = $result->fetch_assoc()) {
+                                                $valid_values[] = $row['Appointment_ID'];
+                                            }
+                                            $conn->close();
+
+                                            // Display the select element with options for valid values
+                                            echo '<select class="form-control" name="appointmentno" required>';
+                                            foreach ($valid_values as $value) {
+                                                echo '<option value="'.$value.'">'.$value.'</option>';
+                                            }
+                                            echo '</select>';
+                                            ?>
                                         </div>
                                     </div>
                                     <label for="amountdue">Amount Due</label>

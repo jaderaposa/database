@@ -694,11 +694,11 @@ th.sorting_asc {
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
-                                                <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
-                                                <th>Patient No.&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
-                                                <th>Appointment No.&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
-                                                <th>Date of Payment&nbsp;&nbsp;<i class="fa-solid fa-venus-mars"></i>&nbsp;&nbsp;</th>
-                                                <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse" ></i>&nbsp;&nbsp;</th>                                         
+                                                <th style="width: 10rem;">ID</th>
+                                                <th>Patient No.</th>
+                                                <th>Appointment No.</th>
+                                                <th>Date of Payment</th>
+                                                <th style="width:20%;">Actions</th>                                         
                                             </tr>
                                         </thead>
                                         <!-- <tfoot>

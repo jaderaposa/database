@@ -962,19 +962,97 @@
                                     <label for="patientno">Patient No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" class="form-control" value="<?php echo $row['User_ID']; ?>" placeholder="" name="patientno" required>
+                                            <?php
+                                            // Connect to your MySQL database
+                                            include 'connect2.php';
+
+                                            // Retrieve existing values from your database
+                                            $sql = "SELECT User_ID FROM users";
+                                            $result = $conn->query($sql);
+                                            $valid_values = array();
+                                            while($user_row = $result->fetch_assoc()) {
+                                                $valid_values[] = $user_row['User_ID'];
+                                            }
+                                            $conn->close();
+
+                                            // Retrieve the previous value for this field
+                                            $previous_value = $row['User_ID']; // Replace with code that retrieves the previous value
+
+                                            // Display the select element with options for valid values
+                                            echo '<select class="form-control" name="patientno" required>';
+                                            foreach ($valid_values as $value) {
+                                                if ($value == $previous_value) {
+                                                    echo '<option value="'.$value.'" selected>'.$value.'</option>';
+                                                } else {
+                                                    echo '<option value="'.$value.'">'.$value.'</option>';
+                                                }
+                                            }
+                                            echo '</select>';
+                                            ?>
                                         </div>
                                     </div>
                                     <label for="staffno">Staff No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number"  class="form-control" value="<?php echo $row['Staff_ID']; ?>" placeholder="" name="staffno">
+                                            <?php
+                                            // Connect to your MySQL database
+                                            include 'connect2.php';
+
+                                            // Retrieve existing values from your database
+                                            $sql = "SELECT Staff_ID FROM staffs";
+                                            $result = $conn->query($sql);
+                                            $valid_values = array();
+                                            while($user_row = $result->fetch_assoc()) {
+                                                $valid_values[] = $user_row['Staff_ID'];
+                                            }
+                                            $conn->close();
+
+                                            // Retrieve the previous value for this field
+                                            $previous_value = $row['Staff_ID']; // Replace with code that retrieves the previous value
+
+                                            // Display the select element with options for valid values
+                                            echo '<select class="form-control" name="staffno" required>';
+                                            foreach ($valid_values as $value) {
+                                                if ($value == $previous_value) {
+                                                    echo '<option value="'.$value.'" selected>'.$value.'</option>';
+                                                } else {
+                                                    echo '<option value="'.$value.'">'.$value.'</option>';
+                                                }
+                                            }
+                                            echo '</select>';
+                                            ?>
                                         </div>
                                     </div>
                                     <label for="counselorno">Counselor No.</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" value="<?php echo $row['Counselor_ID']; ?>" placeholder="" name="counselorno" required>
+                                            <?php
+                                            // Connect to your MySQL database
+                                            include 'connect2.php';
+
+                                            // Retrieve existing values from your database
+                                            $sql = "SELECT Counselor_ID FROM counselors";
+                                            $result = $conn->query($sql);
+                                            $valid_values = array();
+                                            while($user_row = $result->fetch_assoc()) {
+                                                $valid_values[] = $user_row['Counselor_ID'];
+                                            }
+                                            $conn->close();
+
+                                            // Retrieve the previous value for this field
+                                            $previous_value = $row['Counselor_ID']; // Replace with code that retrieves the previous value
+
+                                            // Display the select element with options for valid values
+                                            echo '<select class="form-control" name="counselorno" required>';
+                                            foreach ($valid_values as $value) {
+                                                if ($value == $previous_value) {
+                                                    echo '<option value="'.$value.'" selected>'.$value.'</option>';
+                                                } else {
+                                                    echo '<option value="'.$value.'">'.$value.'</option>';
+                                                }
+                                            }
+                                            echo '</select>';
+                                            ?>
                                         </div>
                                     </div>
                                     <label for="date_of_referral">Date of Referral</label>

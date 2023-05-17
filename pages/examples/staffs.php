@@ -694,12 +694,12 @@ th.sorting_asc {
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
-                                                <th style="width: 10rem;">ID&nbsp;&nbsp;<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;</th>
-                                                <th>Name&nbsp;&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;</th>
-                                                <th>Address&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i>&nbsp;&nbsp;</th>
-                                                <th>Phone No.&nbsp;&nbsp;<i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;</th>
-                                                <th>Position&nbsp;&nbsp;<i class="fa-solid fa-map-location-dot"></i>&nbsp;&nbsp;</th>
-                                                <th style="width:20%;">Actions&nbsp;&nbsp;<i class="fa-solid fa-computer-mouse"></i>&nbsp;&nbsp;</th>                                         
+                                                <th style="width: 10rem;">ID</th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>Phone No.</th>
+                                                <th>Position</th>
+                                                <th style="width:20%;">Actions</th>                                         
                                             </tr>
                                         </thead>
                                         <tbody>
