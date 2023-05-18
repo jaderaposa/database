@@ -911,7 +911,7 @@
                                     <label for="prefer">Preferred Method</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="" name="prefer" required>
+                                            <input type="text" class="form-control" placeholder="Introduce or Anonymous" name="prefer" required>
                                         </div>
                                     </div>
                                     <label for="date_of_admission">Date of Admission</label>
